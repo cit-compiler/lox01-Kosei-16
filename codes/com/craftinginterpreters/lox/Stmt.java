@@ -15,12 +15,11 @@ abstract class Stmt {
 
     @Override
     <R> R accept(Visitor<R> visitor) {
-      return visitor.visitExpressionStmt(this);
+    return visitor.visitExpressionStmt(this);
     }
 
     final Expr expression;
   }
-
   static class Print extends Stmt {
     Print(Expr expression) {
       this.expression = expression;
@@ -28,13 +27,11 @@ abstract class Stmt {
 
     @Override
     <R> R accept(Visitor<R> visitor) {
-      return visitor.visitPrintStmt(this);
+    return visitor.visitPrintStmt(this);
     }
 
     final Expr expression;
   }
-
-
   static class Var extends Stmt {
     Var(Token name, Expr initializer) {
       this.name = name;
@@ -43,7 +40,7 @@ abstract class Stmt {
 
     @Override
     <R> R accept(Visitor<R> visitor) {
-      return visitor.visitVarStmt(this);
+    return visitor.visitVarStmt(this);
     }
 
     final Token name;
